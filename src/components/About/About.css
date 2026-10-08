@@ -1,0 +1,328 @@
+
+.about {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 100px 8%;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(0, 210, 255, 0.08),
+      transparent 30%
+    ),
+    #080a0f;
+
+  color: white;
+}
+
+/* Heading */
+
+.about-heading {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.about-heading p {
+  color: #ff4b9b;
+
+  font-size: 14px;
+
+  letter-spacing: 4px;
+
+  margin-bottom: 10px;
+}
+
+.about-heading h1 {
+  font-size: 50px;
+
+  margin: 0;
+
+  color: white;
+}
+
+.about-heading h1 span {
+  color: #00d9ff;
+}
+
+/* Container */
+
+.about-container {
+  max-width: 1100px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 100px;
+}
+
+/* Timeline */
+
+.timeline {
+  position: relative;
+
+  padding-left: 50px;
+}
+
+/* Vertical line */
+
+.timeline::before {
+  content: "";
+
+  position: absolute;
+
+  left: 10px;
+
+  top: 0;
+
+  width: 2px;
+
+  height: 100%;
+
+  background: linear-gradient(
+    to bottom,
+    #00d9ff,
+    #ff4b9b,
+    transparent
+  );
+}
+
+/* Timeline item */
+
+.timeline-item {
+  position: relative;
+
+  margin-bottom: 55px;
+}
+
+/* Dot */
+
+.timeline-dot {
+  position: absolute;
+
+  left: -47px;
+
+  top: 5px;
+
+  width: 16px;
+  height: 16px;
+
+  border-radius: 50%;
+
+  background: #00d9ff;
+
+  box-shadow:
+    0 0 10px #00d9ff,
+    0 0 25px #00d9ff;
+}
+
+/* Content */
+
+.timeline-content {
+  padding: 22px;
+
+  background: rgba(15, 20, 28, 0.8);
+
+  border: 1px solid rgba(0, 217, 255, 0.15);
+
+  border-radius: 10px;
+
+  transition: 0.3s ease;
+}
+
+.timeline-content:hover {
+  border-color: #00d9ff;
+
+  transform: translateX(8px);
+
+  box-shadow:
+    0 0 20px rgba(0, 217, 255, 0.15);
+}
+
+.timeline-content h2 {
+  color: #ff4b9b;
+
+  font-size: 22px;
+
+  margin-bottom: 18px;
+}
+
+.timeline-content p {
+  color: #b9c1cc;
+
+  font-size: 15px;
+
+  margin: 8px 0;
+}
+
+.timeline-content strong {
+  color: #ffffff;
+}
+
+/* Right Cards */
+
+.about-cards {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+
+  align-content: center;
+}
+
+.about-card {
+  position: relative;
+
+  padding: 28px;
+
+  min-height: 170px;
+
+  background: #10141b;
+
+  border: 1px solid #1b3944;
+
+  border-radius: 12px;
+
+  transition: 0.3s ease;
+
+  overflow: hidden;
+}
+
+.about-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 3px;
+  height: 100%;
+
+  background: #00d9ff;
+}
+
+.about-card span {
+  color: #00d9ff;
+
+  font-size: 13px;
+
+  font-weight: bold;
+}
+
+.about-card h3 {
+  font-size: 19px;
+
+  margin: 15px 0 10px;
+
+  color: white;
+}
+
+.about-card p {
+  color: #8e99a8;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+/* Card pink variation */
+
+.about-card:nth-child(2)::before,
+.about-card:nth-child(4)::before {
+  background: #ff4b9b;
+}
+
+.about-card:nth-child(2) span,
+.about-card:nth-child(4) span {
+  color: #ff4b9b;
+}
+
+/* =====================
+   Tablet
+===================== */
+
+@media (max-width: 900px) {
+
+  .about {
+    padding: 90px 5%;
+  }
+
+  .about-container {
+    gap: 50px;
+  }
+
+  .about-heading h1 {
+    font-size: 42px;
+  }
+
+}
+
+/* =====================
+   Mobile
+===================== */
+
+@media (max-width: 767px) {
+
+  .about {
+    padding: 90px 20px;
+  }
+
+  .about-heading {
+    margin-bottom: 50px;
+  }
+
+  .about-heading h1 {
+    font-size: 38px;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .timeline {
+    padding-left: 40px;
+  }
+
+  .timeline::before {
+    left: 7px;
+  }
+
+  .timeline-dot {
+    left: -40px;
+  }
+
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    min-height: auto;
+  }
+}
+
+/* Small Mobile */
+
+@media (max-width: 400px) {
+
+  .about-heading h1 {
+    font-size: 32px;
+  }
+
+  .timeline-content {
+    padding: 18px;
+  }
+
+  .timeline-content h2 {
+    font-size: 19px;
+  }
+
+}
