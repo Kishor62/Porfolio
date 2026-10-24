@@ -5,9 +5,7 @@ import "./Nav.css";
 function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <nav>
@@ -21,36 +19,47 @@ function Nav() {
           spy={true}
           smooth={true}
           duration={500}
+          offset={-70}
         >
           <li>Home</li>
         </Link>
-
         <Link
           to="about"
           activeClass="active"
           spy={true}
           smooth={true}
           duration={500}
+          offset={-70}
         >
           <li>About</li>
         </Link>
-
         <Link
           to="projects"
           activeClass="active"
           spy={true}
           smooth={true}
           duration={500}
+          offset={-70}
         >
           <li>Projects</li>
         </Link>
-
+        <Link
+          to="certifications"
+          activeClass="active"
+          spy={true}
+          smooth={true}
+          duration={500}
+          offset={-70}
+        >
+          <li>Certifications</li>
+        </Link>
         <Link
           to="contact"
           activeClass="active"
           spy={true}
           smooth={true}
           duration={500}
+          offset={-70}
         >
           <li>Contact</li>
         </Link>
@@ -73,36 +82,47 @@ function Nav() {
           spy={true}
           smooth={true}
           duration={500}
+          offset={-70}
           onClick={closeMenu}
         >
           <li>Home</li>
         </Link>
-
         <Link
           to="about"
           spy={true}
           smooth={true}
           duration={500}
+          offset={-70}
           onClick={closeMenu}
         >
           <li>About</li>
         </Link>
-
         <Link
           to="projects"
           spy={true}
           smooth={true}
           duration={500}
+          offset={-70}
           onClick={closeMenu}
         >
           <li>Projects</li>
         </Link>
-
+        <Link
+          to="certifications"
+          spy={true}
+          smooth={true}
+          duration={500}
+          offset={-70}
+          onClick={closeMenu}
+        >
+          <li>Certifications</li>
+        </Link>
         <Link
           to="contact"
           spy={true}
           smooth={true}
           duration={500}
+          offset={-70}
           onClick={closeMenu}
         >
           <li>Contact</li>

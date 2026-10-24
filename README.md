@@ -195,7 +195,7 @@ The Contact section allows visitors to get in touch with me through my available
 
 ### Matriculation — 10th
 
-**CBSE, Delhi**
+**BSEB, Patna**
 
 **Percentage:** 63%
 

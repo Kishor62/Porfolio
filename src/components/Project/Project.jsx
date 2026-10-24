@@ -1,232 +1,222 @@
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import todo from "../../assets/images/Todo-app.png";
+import portfolio from "../../assets/images/Portfolio.png";
+import shopmart from "../../assets/images/ShopMart-E.png";
 import "./Project.css";
 
+const projectData = [
+  {
+    id: 1,
+    title: "Todo App - Full MERN Stack",
+    category: "Task Management",
+    description:
+      "Full-stack Todo Application using MERN Stack (MongoDB, Express, React, Node.js). Includes user authentication, CRUD operations, task filtering, and responsive design. Data is securely stored in MongoDB with real-time UI updates.",
+    image: todo,
+    tech: ["React", "Node.js", "Express", "MongoDB"],
+    color: "purple",
+    live: "https://todo-app-mg2h.vercel.app/",
+    github: "https://github.com/Kishor62/Todo-app",
+  },
+  {
+    id: 2,
+    title: "Portfolio Website",
+    category: "Web Site",
+    description:
+      "Modern personal portfolio website built with React. Features smooth animations, dark theme, responsive design and project showcase.",
+    image: portfolio,
+    tech: ["React.js", "CSS3", "JavaScript"],
+    color: "blue",
+    live: "#",
+    github: "#",
+  },
+  {
+    id: 3,
+    title: "ShopMart - E-commerce Website",
+    category: "E-commerce",
+    description:
+      "Modern and responsive e-commerce website built with React.js. Features product browsing, shopping cart management, category-based filtering, seamless navigation, and responsive UI. Uses Context API, React Router, Redux Toolkit, and Tailwind CSS.",
+    image: shopmart,
+    tech: [
+      "React.js",
+      "JavaScript",
+      "Context API",
+      "React Router",
+      "Redux Toolkit",
+      "Tailwind CSS",
+    ],
+    color: "green",
+    live: "https://shopmart-e-commerce-liart.vercel.app/",
+    github: "https://github.com/Kishor62/Shopmart-E-commerce.git",
+  },
+];
+
+const categories = [
+  "All",
+  "Web Site",
+  "Task Management",
+  "Javascript",
+  "React.js",
+  "E-commerce",
+];
+
 function Project() {
-  const [filter, setFilter] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("All");
 
-  const projects = [
-    {
-      id: 1,
-      title: "To-Do List App",
-      category: "JavaScript",
-      image: "/projects/todo.png",
-      description:
-        "A simple and responsive To-Do List application built with HTML, CSS and JavaScript.",
-      github: "#",
-      live: "#",
-    },
-    {
-      id: 2,
-      title: "Weather App",
-      category: "React",
-      image: "/projects/weather.png",
-      description:
-        "A real-time weather application using React and OpenWeather API.",
-      github: "#",
-      live: "#",
-    },
-    {
-      id: 3,
-      title: "Portfolio Website",
-      category: "React",
-      image: "/projects/portfolio.png",
-      description:
-        "A personal portfolio website with smooth scrolling, animations and responsive design.",
-      github: "#",
-      live: "#",
-    },
-    {
-      id: 4,
-      title: "E-Commerce Website",
-      category: "HTML & CSS",
-      image: "/projects/ecommerce.png",
-      description:
-        "A modern e-commerce website UI with cart, product listing and responsive design.",
-      github: "#",
-      live: "#",
-    },
-    {
-      id: 5,
-      title: "Calculator App",
-      category: "JavaScript",
-      image: "/projects/calculator.png",
-      description:
-        "A functional calculator with modern UI and smooth animations.",
-      github: "#",
-      live: "#",
-    },
-    {
-      id: 6,
-      title: "Food Delivery App",
-      category: "React",
-      image: "/projects/food.png",
-      description:
-        "A food delivery application with menu, cart and order tracking features.",
-      github: "#",
-      live: "#",
-    },
-  ];
+  const filteredProjects = projectData.filter((project) => {
+    if (activeCategory === "All") return true;
 
-  const categories = [
-    "All",
-    "React",
-    "JavaScript",
-    "HTML & CSS",
-  ];
+    if (activeCategory === "Javascript") {
+      return project.tech.some(
+        (tech) => tech.toLowerCase() === "javascript"
+      );
+    }
 
-  const filteredProjects =
-    filter === "All"
-      ? projects
-      : projects.filter((project) => project.category === filter);
+    if (activeCategory === "React.js") {
+      return project.tech.some((tech) =>
+        ["react", "react.js"].includes(tech.toLowerCase())
+      );
+    }
+
+    return project.category === activeCategory;
+  });
 
   return (
-    <section className="projects" id="projects">
+    <section className="project-page" id="projects">
+      <div className="project-bg-circle circle-one"></div>
+      <div className="project-bg-circle circle-two"></div>
 
-      {/* Heading */}
-      <motion.div
-        className="projects-heading"
-        initial={{ opacity: 0, y: -40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-      >
-        <p>MY WORK</p>
+      <div className="project-hero">
+        <div className="floating-icon code-icon">&lt;/&gt;</div>
+        <div className="floating-icon js-icon">JS</div>
+        <div className="floating-icon react-icon">⚛</div>
+
+        <p className="project-subtitle">MY WORK</p>
 
         <h1>
           My <span>Projects</span>
         </h1>
 
-        <div className="heading-line"></div>
+        <p className="project-hero-text">
+          Here are some of the projects I have built. Each project reflects my
+          skills, creativity and passion for development.
+        </p>
+      </div>
 
-        <h3>
-          Here are some of my recent projects. Each project helps me
-          learn and improve my skills in web development.
-        </h3>
-      </motion.div>
+      <div className="project-container">
+        <div className="project-heading">
+          <div>
+            <p className="project-label">MY PORTFOLIO</p>
+            <h2>
+              Featured Projects<span>.</span>
+            </h2>
+          </div>
 
-      {/* Filter */}
-      <motion.div
-        className="project-filter"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        {categories.map((category) => (
-          <button
-            key={category}
-            className={filter === category ? "filter-active" : ""}
-            onClick={() => setFilter(category)}
-          >
-            {category}
-          </button>
-        ))}
-      </motion.div>
+          <div className="project-total">
+            {String(filteredProjects.length).padStart(2, "0")}
+            <small> Projects</small>
+          </div>
+        </div>
 
-      {/* Projects */}
-      <motion.div
-        className="project-grid"
-        layout
-      >
-        <AnimatePresence mode="popLayout">
+        <div className="project-filters">
+          {categories.map((category) => (
+            <button
+              key={category}
+              className={
+                activeCategory === category
+                  ? "project-filter selected"
+                  : "project-filter"
+              }
+              onClick={() => setActiveCategory(category)}
+              key={category}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
 
-          {filteredProjects.map((project) => (
-            <motion.div
+        <div className="project-grid">
+          {filteredProjects.map((project, index) => (
+            <article
               className="project-card"
               key={project.id}
-              layout
-              initial={{ opacity: 0, scale: 0.8, y: 30 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.4 }}
-              whileHover={{
-                y: -10,
-              }}
+              style={{ "--card-delay": `${index * 100}ms` }}
             >
-
-              {/* Image */}
               <div className="project-image">
                 <img
                   src={project.image}
                   alt={project.title}
+                  loading="lazy"
                 />
 
-                <div className="image-overlay">
-                  <a href={project.live}>
-                    Live Demo
-                  </a>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="project-content">
-
-                <span className="project-category">
+                <span className={`project-badge ${project.color}`}>
                   {project.category}
                 </span>
 
-                <h2>{project.title}</h2>
-
-                <p>{project.description}</p>
-
-                <div className="project-bottom">
-
-                  <a
-                    href={project.live}
-                    className="view-project"
-                  >
-                    View Project →
-                  </a>
-
-                  <div className="project-links">
-
-                    <a
-                      href={project.github}
-                      title="GitHub"
-                    >
-                      GitHub
-                    </a>
-
-                    <a
-                      href={project.live}
-                      title="Live Demo"
-                    >
-                      ↗
-                    </a>
-
-                  </div>
-
-                </div>
-
+                <a
+                  href={project.live}
+                  className="project-external"
+                  aria-label={`Open ${project.title}`}
+                  target={project.live !== "#" ? "_blank" : undefined}
+                  rel={project.live !== "#" ? "noreferrer" : undefined}
+                >
+                  ↗
+                </a>
               </div>
 
-            </motion.div>
+              <div className="project-card-content">
+                <h3>{project.title}</h3>
+
+                <p className="project-description">
+                  {project.description}
+                </p>
+
+                <div className="project-tech">
+                  {project.tech.map((item) => (
+                    <span key={item}>{item}</span>
+                  ))}
+                </div>
+
+                <div className="project-buttons">
+                  <a
+                    href={project.live}
+                    className="project-demo"
+                    target={project.live !== "#" ? "_blank" : undefined}
+                    rel={project.live !== "#" ? "noreferrer" : undefined}
+                    onClick={(e) => {
+                      if (project.live === "#") e.preventDefault();
+                    }}
+                  >
+                    Live Demo <span>↗</span>
+                  </a>
+
+                  <a
+                    href={project.github}
+                    className="project-github"
+                    target={project.github !== "#" ? "_blank" : undefined}
+                    rel={project.github !== "#" ? "noreferrer" : undefined}
+                    onClick={(e) => {
+                      if (project.github === "#") e.preventDefault();
+                    }}
+                  >
+                    <span>⌘</span> View Code
+                  </a>
+                </div>
+              </div>
+            </article>
           ))}
+        </div>
+      </div>
 
-        </AnimatePresence>
-      </motion.div>
+      <footer className="project-footer">
+        <p>
+          Designed with <span>♥</span> by <strong>Kishor Kumar</strong>
+        </p>
 
-      {/* Bottom Button */}
-      <motion.div
-        className="more-projects"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        <span></span>
-
-        <button>
-          View More Projects →
-        </button>
-
-        <span></span>
-      </motion.div>
-
+        <a href="mailto:your@email.com">Let's Connect ↗</a>
+      </footer>
     </section>
   );
 }
 
 export default Project;
-

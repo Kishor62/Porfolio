@@ -76,7 +76,7 @@ function About() {
               </p>
             </div>
           </motion.div>
-          
+
           {/* Education */}
           <motion.div className="timeline-item" variants={item}>
             <div className="timeline-dot"></div>
@@ -116,7 +116,7 @@ function About() {
               </div>
             </div>
           </motion.div>
-        
+
           {/* Skills */}
           <motion.div className="timeline-item" variants={item}>
             <div className="timeline-dot"></div>
@@ -124,9 +124,13 @@ function About() {
             <div className="timeline-content">
               <h2>Skills</h2>
 
-              <p>HTML • CSS • JavaScript</p>
-              <p>React • Tailwind CSS</p>
-              <p>Git • GitHub</p>
+              <p>HTML5 • CSS3 • JavaScript (ES6+)</p>
+              <p>React.js • Tailwind CSS</p>
+              <p>Context API • Redux Toolkit</p>
+              <p>Responsive Web Design • UI Development</p>
+              <p>Frontend Deployment: Vercel</p>
+              <p>Backend Deployment: Render</p>
+              <p>Tools: Git • GitHub • Visual Studio Code</p>
             </div>
           </motion.div>
         </motion.div>
