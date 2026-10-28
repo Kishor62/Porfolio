@@ -65,13 +65,12 @@ portfolio/
 │   ├── profile.png
 │   ├── portfolio-preview.png
 │   │
-│   └── projects/
+│   └── images/
 │       ├── todo.png
-│       ├── weather.png
 │       ├── portfolio.png
 │       ├── ecommerce.png
-│       ├── calculator.png
-│       └── food.png
+│       
+| 
 │
 ├── src/
 │   │
