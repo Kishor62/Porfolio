@@ -3,14 +3,13 @@
 A modern, responsive and animated **personal portfolio website** built with **React.js**.
 The portfolio showcases my skills, education, projects and contact information with a clean **dark neon UI**.
 
-## 🚀 Live Demo
+## 🚀 Live Demo : https://porfolio-kishor62.vercel.app/
 
-🔗 **Live Website:** [Add your live website URL here]
+🔗 **Live Website:** 
 
 ## 📸 Preview
 
-![Portfolio Preview](./public/portfolio-preview.png)
-
+ 
 ---
 
 ## ✨ Features
